@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Magic TT ball</title>
+        
+        <!-- <script src="shake.js"  charset="utf-8"></script>  -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+      
+    </head>
+    <body style="background-color: #0F0F0F">
+
+        <a href="magic-ball.html" id="accelPermsButton"  class="btn-predict" onclick="getAccel()"><h1>Commencer la prédiction</h1></a>
+
+    </body>
+
+    <style>
+        @font-face {
+            font-family: 'lucifer-sans-black)';
+            src: url('fonts/lucifer-sans-black.woff2') format('woff2'),
+                url('fonts/lucifer-sans-black.woff') format('woff');
+            font-weight: bold;
+            font-style: bold;
+
+        }
+        .btn-predict{
+            margin: 20% auto;
+            margin-top: 20%;
+            left: 50%; right: 50%;
+            width: 40%;
+            background-color: white;
+            color: #0F0F0F;
+            position:fixed;
+        }
+    </style>
+
+    <script>
+        function getAccel(){
+        DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+        // Add a listener to get smartphone acceleration 
+            // in the XYZ axes (units in m/s^2)
+            window.addEventListener('devicemotion', (event) => {
+            });       // Add a listener to get smartphone orientation 
+            // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+            });        
+        };
+        });
+    }
+    </script>
+
+
+</html>

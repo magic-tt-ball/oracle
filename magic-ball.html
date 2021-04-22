@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Magic TT ball</title>
+        <!-- <script src="shake.js"  charset="utf-8"></script>  -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+        <script src="script.js"></script> 
+      
+    </head>
+    <body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);" style="background-color:#0F0F0F;">
+
+
+        <div id="fullscreenz">
+            <video width="40%" height="40%" src="img/androide1.mp4" id="androide" autoplay loop playsinline muted></video>
+
+            <video width="120%" height="120%"src="img/magicien.mp4" id="sorciere" autoplay loop playsinline muted></video></video>
+
+            <video width="120%" height="120%"src="img/sensible.mp4" id="naif" autoplay loop playsinline muted></video></video>
+        </div>
+
+    </body>
+
+    <style>
+        body{
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0px;
+            font-family: helvetica;
+        }
+    
+        #androide{
+            visibility: hidden;
+            position: fixed;
+        }
+        /* #naif{
+            visibility: hidden;
+            position: fixed;
+        } */
+
+        #sorciere{
+            visibility: hidden;
+            position: fixed;
+        }
+
+        #naif{
+            visibility: hidden;
+            position: fixed;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+	    }
+        #fullscreenz{
+            margin:0px;
+            padding:0px;
+        }
+
+        #fullscreenz video{
+            position: fixed;
+            top: 50%; left: 50%;
+            z-index: 1;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);  
+        }
+
+        </style>
+
+
+    <script>
+        function getAccel(){
+        DeviceMotionEvent.requestPermission().then(response => {
+        if (response == 'granted') {
+        // Add a listener to get smartphone acceleration 
+            // in the XYZ axes (units in m/s^2)
+            window.addEventListener('devicemotion', (event) => {
+            });       // Add a listener to get smartphone orientation 
+            // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener('deviceorientation',(event) => {
+            });        
+        };
+        });
+    }
+    </script>
+
+</html>
